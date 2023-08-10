@@ -1,0 +1,9 @@
+{
+  "debug": true,
+  "server": {
+    "address": ":8099"
+  },
+  "context": {
+    "timeout": 1000
+  }
+}
