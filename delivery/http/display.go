@@ -111,6 +111,7 @@ func NewdisplayHandler(g *gin.Engine, uc display.Usecase) {
 
 	ver.POST("/display", handler.Create)
 	ver.GET("/display/:id", handler.GetDetail)
+	ver.GET("/display/available", handler.GetAall)
 	ver.GET("/display", handler.GetAall)
 	ver.PUT("/display/:id", handler.Update)
 	ver.DELETE("/display/:id", handler.Delete)
