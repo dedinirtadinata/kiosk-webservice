@@ -37,7 +37,7 @@ func (h displayHandler) Create(context *gin.Context) {
 		return
 	}
 
-	_, err = h.usecase.CreateData(request.Title, request.Description, request.BackgroundURL, request.CardImageURL, request.Url)
+	_, err = h.usecase.CreateData(request.Title, request.Description, request.BackgroundURL, request.CardImageURL, request.Url, request.ApiKey)
 
 	if err != nil {
 		context.JSON(http.StatusOK, ResponseSuccess{Status: "NOT_OK", Message: err.Error()})
@@ -85,7 +85,7 @@ func (h displayHandler) Update(context *gin.Context) {
 	paramID := context.Params.ByName("id")
 	id, _ := strconv.Atoi(paramID)
 
-	err = h.usecase.Update(id, request.Title, request.Description, request.BackgroundURL, request.CardImageURL, request.Url)
+	err = h.usecase.Update(id, request.Title, request.Description, request.BackgroundURL, request.CardImageURL, request.Url, request.ApiKey)
 
 	if err != nil {
 		context.JSON(http.StatusOK, ResponseSuccess{Status: "NOT_OK", Message: err.Error()})

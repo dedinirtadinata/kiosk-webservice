@@ -7,9 +7,9 @@ import "github.com/dedinirtadinata/kiosk-webservice/display/model"
  */
 
 type Usecase interface {
-	CreateData(title string, description string, bgImage string, cardImage string, url string) (int, error)
+	CreateData(title string, description string, bgImage string, cardImage string, url string, apiKey string) (int, error)
 	GetDataById(Id int) (*model.DisplayModel, error)
-	Update(Id int, title string, description string, bgImage string, cardImage string, url string) error
+	Update(Id int, title string, description string, bgImage string, cardImage string, url string, apiKey string) error
 	Delete(Id int) error
 	GetAllData() ([]*model.DisplayModel, error)
 }

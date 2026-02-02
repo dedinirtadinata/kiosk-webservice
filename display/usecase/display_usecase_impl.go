@@ -13,13 +13,14 @@ type displayUsecase struct {
 	repo display.Repository
 }
 
-func (d displayUsecase) CreateData(title string, description string, bgImage string, cardImage string, url string) (int, error) {
+func (d displayUsecase) CreateData(title string, description string, bgImage string, cardImage string, url string, apiKey string) (int, error) {
 	return d.repo.CreateData(model.DisplayModel{
 		Title:         title,
 		Description:   description,
 		BackgroundURL: bgImage,
 		CardImageURL:  cardImage,
 		Url:           url,
+		ApiKey:        apiKey,
 	})
 }
 
@@ -27,13 +28,14 @@ func (d displayUsecase) GetDataById(Id int) (*model.DisplayModel, error) {
 	return d.repo.GetDataById(Id)
 }
 
-func (d displayUsecase) Update(Id int, title string, description string, bgImage string, cardImage string, url string) error {
+func (d displayUsecase) Update(Id int, title string, description string, bgImage string, cardImage string, url string, apiKey string) error {
 	return d.repo.Update(Id, model.DisplayModel{
 		Title:         title,
 		Description:   description,
 		BackgroundURL: bgImage,
 		CardImageURL:  cardImage,
 		Url:           url,
+		ApiKey:        apiKey,
 	})
 }
 

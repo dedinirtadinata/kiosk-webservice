@@ -45,15 +45,6 @@ func main() {
 	ucDisplay := _displayUc.NewdisplayUsecase(displayRepo)
 
 	_handler.NewdisplayHandler(r, ucDisplay)
-	//r.Use(cors.Middleware(cors.Config{
-	//	Origins:         "*",
-	//	Methods:         "GET, PUT, POST, DELETE",
-	//	RequestHeaders:  "Origin, Authorization, Content-Type",
-	//	ExposedHeaders:  "",
-	//	MaxAge:          60 * time.Second,
-	//	Credentials:     false,
-	//	ValidateHeaders: false,
-	//}))
 
 	r.Run(viper.GetString("server.address"))
 }
